@@ -1,5 +1,6 @@
 import React from 'react'; 
-import { BrowserRouter as NavLink, Routes, Route } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
+
 import Footer from '../Footer';
 import Header from '../Header';
 import ExplorarCarro from './ExplorarCarro';
