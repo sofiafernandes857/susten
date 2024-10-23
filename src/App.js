@@ -5,7 +5,7 @@ import Carros3D from './componentes/Carros3D';
 
 function App() {
   return (
-    <Router basename='/Sustenrace'>
+    <Router basename='/'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/carros3D/*' element={<Carros3D />} /> 
