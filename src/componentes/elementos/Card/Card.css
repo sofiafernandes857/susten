@@ -1,0 +1,64 @@
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "img nome"
+        "conteudo conteudo";
+    justify-content: start;
+    background-color: white;
+    border-radius: var(--border-radius);
+    min-width: 220px;
+    max-width: 225px;
+    height: 240px;
+    padding: 1.5em;
+    box-shadow: 3px 2px 12px var(--color-shadow);
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px var(--color-shadow);
+}
+
+.card img {
+    grid-area: img;
+}
+
+.nome {
+    grid-area: nome;
+}
+
+.conteudo {
+    grid-area: conteudo;
+}
+
+.card p {
+    font-size: var(--p-size-mobile);
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    
+    .card {
+        min-width: 250px;
+        height: 300px;
+    }
+    
+    .card p {
+        font-size: var(--p-size-tablet);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .card {
+        min-width: 280px;
+        height: 300px;
+    }
+
+    .card p {
+        font-size: var(--p-size-desktop);
+    }
+}

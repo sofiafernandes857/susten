@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PT Serif", serif;
+  background-color: #F2E2E2;
+  box-sizing: border-box;
+}
+
+p {
+  text-indent: 25px;
+  line-height: 30px;
+}

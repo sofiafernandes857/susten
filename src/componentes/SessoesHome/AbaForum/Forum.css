@@ -1,0 +1,61 @@
+.containerForum {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: var(--margin-y) 0;
+}
+
+.containerForum h1, .subtitulo {
+    text-align: center;
+}
+
+.containerForum h1 {
+    font-size: var(--h1-size-mobile);
+}
+
+.subtitulo {
+    font-size: var(--p-size-mobile);
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+    align-items: center;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-top: var(--margin-y);
+    position: relative;
+    padding: 3em;
+}
+
+.cards::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--vermelho-cinza) 50%, transparent 50%);
+    z-index: 0;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .containerForum h1 {
+        font-size: var(--h1-size-tablet);
+    }
+
+    .subtitulo {
+        font-size: var(--p-size-tablet);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .containerForum h1 {
+        font-size: var(--h1-size-desktop);
+    }
+
+    .subtitulo {
+        font-size: var(--p-size-desktop);
+    }
+}

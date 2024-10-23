@@ -1,0 +1,18 @@
+.banner {
+    box-sizing: border-box;
+    padding-top: 1em;
+}
+
+.banner img {
+    max-width: 100%;   
+    width: 100vw;
+    height: auto;
+    z-index: 0;
+    opacity: 95%;
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        padding-top: 3em;
+    }
+}

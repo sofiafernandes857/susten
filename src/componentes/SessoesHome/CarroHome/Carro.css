@@ -1,0 +1,96 @@
+.tituloCarro {
+    font-size: var(--h1-size-desktop);
+    text-align: center;
+}
+
+.tituloCarro span {
+    color: var(--vermelho-p);
+}
+
+
+/* Container dos botões */
+#threejs-controls {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px; 
+    z-index: 1; 
+    margin-bottom: 6em;
+}
+
+
+/* Estilo dos botões */
+.threejs-control-button {
+    background-color: var(--vermelho-carro);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease; 
+    margin: 5px;
+}
+
+.threejs-control-button:hover {
+    background-color: #871e2b;
+}
+
+/* Container principal do canvas */
+#threejs-canvas-container {
+    position: relative;
+    width: 98%;
+    height: 80vh;
+    z-index: 1; /* Coloca o canvas em uma camada mais baixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fundo-canvas); /* Cor de fundo para o canvas */
+}
+
+/* Loading */
+#threejs-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #333;
+    z-index: 5; /* Mantém a mensagem de carregamento acima de tudo */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .tituloCarro {
+        font-size: var(--h1-size-mobile);
+    }
+
+    #threejs-controls {
+        flex-direction: column;
+        top: 20px;
+    }
+
+    .threejs-control-button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
+/* Responsividade para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tituloCarro {
+        font-size: var(--h1-size-tablet);
+    }
+
+    #threejs-controls {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .threejs-control-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

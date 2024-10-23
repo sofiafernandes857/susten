@@ -1,0 +1,100 @@
+.containerBPM {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "texto"
+        "grafico"
+        "botao ";
+    gap: 4em;
+    margin: 6em auto 3em;
+    width: 90%;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.graficoBarras {
+    grid-area: grafico;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 2px 3px 10px var(--color-shadow);
+    padding: 1em;
+    max-height: 250px;
+    max-width: 93%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textoBPM {
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textoBPM h1 {
+    font-size: var(--h1-size-mobile);
+    text-align: center;
+}
+
+.textoBPM p {
+    font-size: var(--p-size-mobile);
+    text-align: justify;
+}
+
+.botaoBPM {
+    grid-area: botao;
+}
+
+@media screen and (min-width: 780px) {
+    .containerBPM {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+            "grafico texto"
+            "botao botao";
+    }
+
+    .textoBPM {
+        max-width: 500px;
+        min-width: 250px;
+    }
+
+    .graficoBarras {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    .textoBPM h1 {
+        font-size: var(--h1-size-tablet);
+    }
+
+    .textoBPM p {
+        font-size: var(--p-size-tablet);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .containerBPM {
+        column-gap: 1em;
+    }
+
+    .graficoBarras {
+        width: 100%;
+        height: 100%;
+        padding: 1.5em 0;
+    }
+
+    .textoBPM h1 {
+        font-size: var(--h1-size-desktop);
+    }
+
+    .textoBPM p {
+        font-size: var(--p-size-desktop);
+    }
+}

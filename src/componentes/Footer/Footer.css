@@ -1,0 +1,65 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--vermelho-medio);
+    margin-top: 4em;
+}
+
+.sessaoLinks {
+    padding: 3em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.redesSociais {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.linksSite {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.linksSite a {
+    color: rgb(228, 228, 228);
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.linksSite a:hover {
+    color: rgb(185, 185, 185);
+}
+
+.direitos {
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+    background-color: var(--vermelho-escuro);
+}
+
+.direitos p {
+    color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 1280px) {
+    .sessaoLinks {
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    .redesSociais {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3em;
+    }
+
+    .linksSite {
+        flex-direction: row;
+        gap: 3em;
+    }
+}

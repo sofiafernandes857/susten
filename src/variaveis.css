@@ -1,0 +1,33 @@
+:root {
+    --h1-size-mobile: 1.2em;
+    --h1-size-tablet: 1.5em;
+    --h1-size-desktop: 1.8em;
+
+    --h2-size-mobile: 1.06em;
+    --h2-size-tablet: 1.25em;
+    --h2-size-desktop: 1.5em;
+
+    --p-size-mobile: 1em;
+    --p-size-tablet: 1.1em;
+    --p-size-desktop: 1.2em;
+
+    --vermelho-claro: #F2E2E2;
+    --vermelho-vibrante: #B20411;
+    --vermelho-medio: #470F13;
+    --vermelho-escuro: #180305;
+    --vermelho-p: #a0121b;
+    --vermelho-carro: #a43943;
+    --vermelho-cinza: #470f1334;
+    --cinza-claro: #470f1310;
+    --color-shadow: #0000004f;
+
+    --margin-y: 2em;
+    --margin-x: 1.3em;
+    --border-radius: 16px;
+
+    --tela-min-tablet: 769px;
+    --tela-max-tablet: 1279px;
+    --tela-min-desktop: 1280px;
+}
+
+/* import '../../variaveis.css' */
