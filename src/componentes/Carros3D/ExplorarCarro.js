@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-//import CarroCheio from '../../models/carroFE.glb';
-//import CarroContorno from '../../models/carroFEcon.glb';
 import './carros3D.css';
 import '../../variaveis.css';
 import 'font-awesome/css/font-awesome.min.css';

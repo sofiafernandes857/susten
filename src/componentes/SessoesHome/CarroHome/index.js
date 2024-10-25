@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import CarroCheio from '../../../models/carroFE.glb';
-import CarroContorno from '../../../models/carroFEcon.glb';
 import './Carro.css';
 import '../../../variaveis.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -61,7 +59,12 @@ const Carro3d = () => {
 
     const gltfLoader = new GLTFLoader();
     let modelIndex = 0;
-    const models = [CarroCheio, CarroContorno];
+
+    // Caminhos absolutos para os modelos na pasta public/models
+    const models = [
+      `${window.location.origin}/models/carroFE.glb`,
+      `${window.location.origin}/models/carroFEcon.glb`
+    ]
 
     function loadModel(modelPath, isContour) {
       if (carroRef.current) {
@@ -75,45 +78,49 @@ const Carro3d = () => {
         carroRef.current = null;
       }
 
-      gltfLoader.load(modelPath, (gltf) => {
-        carroRef.current = gltf.scene;
-        carroRef.current.scale.set(0.1, 0.1, 0.1);
-        carroRef.current.position.set(0, -1.5, 0);
-
-        const isMobile = window.innerWidth <= 768;
-        const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
-
-        if (isMobile) {
-          carroRef.current.scale.set(0.1, 0.1, 0.1);
-          carroRef.current.position.set(0, -1, 0);
-        } else if (isTablet) {
-          carroRef.current.scale.set(0.09, 0.09, 0.09);
-          carroRef.current.position.set(0, -0.5, 0);
-        } else {
+      gltfLoader.load(
+        modelPath,
+        (gltf) => {
+          carroRef.current = gltf.scene;
           carroRef.current.scale.set(0.1, 0.1, 0.1);
           carroRef.current.position.set(0, -1.5, 0);
-        }
 
-        carroRef.current.rotation.y = Math.PI / -2;
+          const isMobile = window.innerWidth <= 768;
+          const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
 
-        carroRef.current.traverse((node) => {
-          if (node.isMesh) {
-            if (isContour) {
-              // Aplicar material de contorno
-              const outlineMaterial = new THREE.MeshBasicMaterial({ color: 0xa0121b, wireframe: true });
-              node.material = outlineMaterial;
-            } else {
-              // Aplicar material padrão com a cor atual
-              const material = new THREE.MeshStandardMaterial({ color: currentColor });
-              node.material = material;
-            }
+          if (isMobile) {
+            carroRef.current.scale.set(0.1, 0.1, 0.1);
+            carroRef.current.position.set(0, -1, 0);
+          } else if (isTablet) {
+            carroRef.current.scale.set(0.09, 0.09, 0.09);
+            carroRef.current.position.set(0, -0.5, 0);
+          } else {
+            carroRef.current.scale.set(0.1, 0.1, 0.1);
+            carroRef.current.position.set(0, -1.5, 0);
           }
-        });
 
-        scene.add(carroRef.current);
-      });
+          carroRef.current.rotation.y = Math.PI / -2;
+
+          carroRef.current.traverse((node) => {
+            if (node.isMesh) {
+              if (isContour) {
+                const outlineMaterial = new THREE.MeshBasicMaterial({ color: 0xa0121b, wireframe: true });
+                node.material = outlineMaterial;
+              } else {
+                const material = new THREE.MeshStandardMaterial({ color: currentColor });
+                node.material = material;
+              }
+            }
+          });
+
+          scene.add(carroRef.current);
+        },
+        undefined,
+        (error) => console.error("Erro ao carregar o modelo:", error)
+      );
     }
 
+    // Carrega o modelo inicial
     loadModel(models[modelIndex], modelIndex === 1);
 
     function animate() {
