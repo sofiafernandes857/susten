@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import CarroCheio from '../../models/carroFE.glb';
-import CarroContorno from '../../models/carroFEcon.glb';
+//import CarroCheio from '../../models/carroFE.glb';
+//import CarroContorno from '../../models/carroFEcon.glb';
 import './carros3D.css';
 import '../../variaveis.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -57,22 +57,29 @@ const ExplorarCarro = () => {
     scene.add(fillLight);
 
     const gltfLoader = new GLTFLoader();
-    let modelIndex = 0;
-    const models = [CarroCheio, CarroContorno];
+  let modelIndex = 0;
 
-    function loadModel(modelPath, isContour) {
-      if (carroRef.current) {
-        scene.remove(carroRef.current);
-        carroRef.current.traverse((node) => {
-          if (node.isMesh) {
-            node.geometry.dispose();
-            node.material.dispose();
-          }
-        });
-        carroRef.current = null;
-      }
+  // Define URLs para os modelos 3D no diretório public
+  const models = [
+    `${process.env.PUBLIC_URL}/models/carroFE.glb`,
+    `${process.env.PUBLIC_URL}/models/carroFEcon.glb`
+  ];
 
-      gltfLoader.load(modelPath, (gltf) => {
+  function loadModel(modelPath, isContour) {
+    if (carroRef.current) {
+      scene.remove(carroRef.current);
+      carroRef.current.traverse((node) => {
+        if (node.isMesh) {
+          node.geometry.dispose();
+          node.material.dispose();
+        }
+      });
+      carroRef.current = null;
+    }
+
+    gltfLoader.load(
+      modelPath,
+      (gltf) => {
         carroRef.current = gltf.scene;
         carroRef.current.scale.set(0.1, 0.1, 0.1);
         carroRef.current.position.set(0, -1.5, 0);
@@ -96,11 +103,9 @@ const ExplorarCarro = () => {
         carroRef.current.traverse((node) => {
           if (node.isMesh) {
             if (isContour) {
-              // Aplicar material de contorno
               const outlineMaterial = new THREE.MeshBasicMaterial({ color: 0xa0121b, wireframe: true });
               node.material = outlineMaterial;
             } else {
-              // Aplicar material padrão com a cor atual
               const material = new THREE.MeshStandardMaterial({ color: currentColor });
               node.material = material;
             }
@@ -108,10 +113,15 @@ const ExplorarCarro = () => {
         });
 
         scene.add(carroRef.current);
-      });
-    }
+      },
+      undefined,
+      (error) => console.error(error)
+    );
+  }
 
-    loadModel(models[modelIndex], modelIndex === 1);
+  // Carrega o modelo inicial
+  loadModel(models[modelIndex], modelIndex === 1);
+
 
     function animate() {
       requestAnimationFrame(animate);
