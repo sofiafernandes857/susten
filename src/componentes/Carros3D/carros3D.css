@@ -2,7 +2,7 @@
 .carros3D-container { 
     display: flex;
     flex-direction: column; 
-    padding: 0 20px; 
+    padding: 0 10px; 
     padding-top: 80px; 
     padding-bottom: 20px; 
     min-height: calc(100vh - 100px); 
@@ -47,7 +47,7 @@
 
 .carros3D-content {
     margin-top: 20px; 
-    padding: 20px; 
+    padding: 0px; 
     background-color: var(--vermelho-claro); 
     border-radius: 5px; 
 }
@@ -214,8 +214,8 @@ input[type="color"] {
 /* Comparacao */
 #containerComparacao {
     width: 100%;
-    height: 80vh; /* Ajuste a altura conforme necessário */
-    overflow: hidden; /* Esconde overflow */
+    height: 80vh; 
+    overflow: hidden; 
     position: relative;
 }
   
@@ -226,7 +226,7 @@ input[type="color"] {
 .dropdown-containerComparacao {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Espaço entre os botões */
+    gap: 10px; 
 }
 
 .dropdownComparacao {
@@ -328,34 +328,52 @@ input[type="color"] {
     cursor: pointer;
 }
 
-/* Estilos específicos para dispositivos móveis */
-@media (max-width: 768px) {
+/* Estilo para mobile */
+@media (max-width: 768px) { 
     .dropdown-containerComparacao {
-        flex-wrap: wrap; 
-    }
-
-    .dropdownComparacao {
-        flex: 1; 
-        min-width: 120px; 
-    }
-
-    .dropbtnCmparacao {
-        height: 50px; 
-        font-size: 14px; 
+        display: flex;
+        justify-content: center;
+        gap: 1rem; /* Espaço entre os botões de dropdown */
+        position: relative; /* Para que os popups se posicionem em relação a este contêiner */
     }
 
     .popup {
-        top: 0; 
-        height: auto; 
+        position: absolute; /* Mantenha como absoluto para posicionamento controlado */
+        width: 90%;
+        z-index: 10;
+        background: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+        transform: translateX(-50%); /* Centraliza horizontalmente */
+        left: 50%; /* Mantém a centralização horizontal */
+        margin: 0; /* Remover margens para evitar espaçamento desnecessário */
+    }
+
+    .popup-left {
+        top: calc(100% - 300px); /* Coloca o popup logo abaixo do botão */
+    }
+
+    .popup-right {
+        top: calc(100% - 550px + 100%); /* Ajusta para ficar logo abaixo do primeiro popup, considerando sua altura */
     }
 
     .popup-content {
-        margin: 5% auto; 
-        width: 90%; 
+        text-align: center;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 18px;
+        cursor: pointer;
     }
 }
 
-/* Estilos específicos para tablets */
+
+
+/* Estilo para tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
     .dropbtnComparacao {
         height: 60px; 

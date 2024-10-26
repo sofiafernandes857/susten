@@ -62,7 +62,7 @@ const Comparacao = () => {
       carro1 = gltf.scene;
 
       if (isMobile) {
-        carro1.position.set(-1.5, -1, 0);
+        carro1.position.set(-2, -1, 0);
         carro1.scale.set(0.05, 0.05, 0.05);
       } else if (isTablet) {
         carro1.position.set(-3.5, -2, 0);
