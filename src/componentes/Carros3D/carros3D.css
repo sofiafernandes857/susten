@@ -333,29 +333,29 @@ input[type="color"] {
     .dropdown-containerComparacao {
         display: flex;
         justify-content: center;
-        gap: 1rem; /* Espaço entre os botões de dropdown */
-        position: relative; /* Para que os popups se posicionem em relação a este contêiner */
+        gap: 1rem; 
+        position: relative; 
     }
 
     .popup {
-        position: absolute; /* Mantenha como absoluto para posicionamento controlado */
+        position: absolute; 
         width: 90%;
         z-index: 10;
         background: #fff;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         padding: 10px;
         border-radius: 8px;
-        transform: translateX(-50%); /* Centraliza horizontalmente */
-        left: 50%; /* Mantém a centralização horizontal */
-        margin: 0; /* Remover margens para evitar espaçamento desnecessário */
+        transform: translateX(-50%); 
+        left: 50%;
+        margin: 0; 
     }
 
     .popup-left {
-        top: calc(100% - 300px); /* Coloca o popup logo abaixo do botão */
+        top: calc(100% - 300px); 
     }
 
     .popup-right {
-        top: calc(100% - 550px + 100%); /* Ajusta para ficar logo abaixo do primeiro popup, considerando sua altura */
+        top: calc(100% - 550px + 100%); 
     }
 
     .popup-content {

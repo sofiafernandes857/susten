@@ -49,10 +49,6 @@ const Carro3d = () => {
     directionalLight2.position.set(-5, 5, 5);
     scene.add(directionalLight2);
 
-    const directionalLight3 = new THREE.DirectionalLight(0xb0c4de, 1);
-    directionalLight3.position.set(-5, -5, 5);
-    scene.add(directionalLight3);
-
     const fillLight = new THREE.DirectionalLight(0xb0c4de, 2);
     fillLight.position.set(5, 0, -5);
     scene.add(fillLight);
@@ -60,7 +56,6 @@ const Carro3d = () => {
     const gltfLoader = new GLTFLoader();
     let modelIndex = 0;
 
-    // Caminhos absolutos para os modelos na pasta public/models
     const models = [
       `${window.location.origin}/models/carroFE.glb`,
       `${window.location.origin}/models/carroFEcon.glb`
@@ -120,7 +115,7 @@ const Carro3d = () => {
       );
     }
 
-    // Carrega o modelo inicial
+    
     loadModel(models[modelIndex], modelIndex === 1);
 
     function animate() {
@@ -207,7 +202,7 @@ const Carro3d = () => {
         });
       }
     };
-  }, [currentColor]); // Adiciona currentColor como dependência
+  }, []); 
 
   useEffect(() => {
     if (carroRef.current) {
@@ -217,7 +212,7 @@ const Carro3d = () => {
         }
       });
     }
-  }, [currentColor]); // Atualiza a cor do carro sempre que currentColor mudar
+  }, [currentColor]); 
 
   return (
     <div>
