@@ -157,7 +157,7 @@
     z-index: 5; 
 }
 
-/* Estilo para o input de cor */
+
 input[type="color"] {
     width: 100px;
     height: 40px;
@@ -167,7 +167,7 @@ input[type="color"] {
     padding: 0;
 }
 
-/* Responsividade para mobile */
+/* Para celular */
 @media (max-width: 768px) {
     .tituloCarro3d {
         font-size: var(--h1-size-mobile);
@@ -189,7 +189,7 @@ input[type="color"] {
     }
 }
 
-/* Responsividade para tablets */
+/* Para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
     .tituloCarro3d {
         font-size: var(--h1-size-tablet);
@@ -283,7 +283,6 @@ input[type="color"] {
     background-color: #832d35;
 }
 
-/* Estilo dos popups */
 .popup {
     display: none; 
     position: fixed;
@@ -328,7 +327,7 @@ input[type="color"] {
     cursor: pointer;
 }
 
-/* Estilo para mobile */
+/* Para celular */
 @media (max-width: 768px) { 
     .dropdown-containerComparacao {
         display: flex;
@@ -371,9 +370,7 @@ input[type="color"] {
     }
 }
 
-
-
-/* Estilo para tablet */
+/* Para tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
     .dropbtnComparacao {
         height: 60px; 
@@ -382,7 +379,7 @@ input[type="color"] {
     }
 }
 
-/* Estilos específicos para desktop */
+/* Específicos para desktop */
 @media (min-width: 1024px) {
     .dropbtnComparacao {
         height: 50px; 
@@ -390,6 +387,7 @@ input[type="color"] {
         padding: 12px; 
     }
 }
+
 /* Formulario */ 
 .form-container {
     background-color: var(--vermelho-carro); 

@@ -208,7 +208,7 @@ const Carro3d = () => {
     if (carroRef.current) {
       carroRef.current.traverse((node) => {
         if (node.isMesh) {
-          node.material.color.set(currentColor); // Muda a cor do carro
+          node.material.color.set(currentColor); 
         }
       });
     }

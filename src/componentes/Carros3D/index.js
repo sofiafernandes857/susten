@@ -15,8 +15,8 @@ const Carros3D = () => {
 
   useEffect(() => {
     if (isInitialLoad) {
-      navigate('explorar'); // Redireciona para a aba "Explorar Carro" apenas na primeira carga
-      setIsInitialLoad(false); // Atualiza o estado para evitar redirecionamento nas próximas interações
+      navigate('explorar'); 
+      setIsInitialLoad(false); 
     }
   }, [isInitialLoad, navigate]);
 

@@ -57,7 +57,7 @@ const ExplorarCarro = () => {
         const gltfLoader = new GLTFLoader();
         let modelIndex = 0;
 
-        // Caminhos absolutos para os modelos na pasta public/models
+    
         const models = [
             `${window.location.origin}/models/carroFE.glb`,
             `${window.location.origin}/models/carroFEcon.glb`
@@ -117,7 +117,6 @@ const ExplorarCarro = () => {
             );
         }
 
-        // Carrega o modelo inicial
         loadModel(models[modelIndex], modelIndex === 1);
 
         function animate() {
@@ -204,17 +203,17 @@ const ExplorarCarro = () => {
                 });
             }
         };
-    }, []); // Remover `currentColor` da lista de dependências para evitar loops
+    }, []); 
 
     useEffect(() => {
         if (carroRef.current) {
             carroRef.current.traverse((node) => {
                 if (node.isMesh) {
-                    node.material.color.set(currentColor); // Muda a cor do carro
+                    node.material.color.set(currentColor); 
                 }
             });
         }
-    }, [currentColor]); // Atualiza a cor do carro sempre que currentColor mudar
+    }, [currentColor]); 
 
     return (
         <div>
