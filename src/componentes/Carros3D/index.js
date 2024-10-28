@@ -1,5 +1,5 @@
-import React from 'react'; 
-import { NavLink, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';  
+import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 
 import Footer from '../Footer';
 import Header from '../Header';
@@ -8,7 +8,18 @@ import Comparacao from './Comparacao';
 import Formulario from './formulario'; 
 import './carros3D.css';
 import '../../variaveis.css';
+
 const Carros3D = () => {
+  const navigate = useNavigate();
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  useEffect(() => {
+    if (isInitialLoad) {
+      navigate('explorar'); // Redireciona para a aba "Explorar Carro" apenas na primeira carga
+      setIsInitialLoad(false); // Atualiza o estado para evitar redirecionamento nas próximas interações
+    }
+  }, [isInitialLoad, navigate]);
+
   return (
     <section>
       <Header />
