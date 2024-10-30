@@ -32,8 +32,10 @@ const Header = () => {
                     <li><a href="#sustenrace">Sustenrace</a></li>
                     <li><a href="#produtos">Produtos</a></li>
                     <li><a href="#carro">Carro 3D</a></li>
+                    <li><a href="#store">SustenStore</a></li>
                     <li><a href="#bpm">Batimentos Cardíacos</a></li>
                     <li><a href="#forum">Fórum</a></li>
+                    
                     {/* <li><Link to="/carros3D">Carros 3D</Link></li> */}
                 </ul>
             </nav>

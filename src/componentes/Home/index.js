@@ -10,6 +10,7 @@ import SessaoSolucao from '../SessoesHome/SessaoSolucao';
 import SessaoSustenrace from '../SessoesHome/SessaoSustenrace';
 import SessaoUniao from '../SessoesHome/SessaoUniao';
 import CarroHome from '../SessoesHome/CarroHome';
+import SustenStore from '../SessoesHome/SustenStore';
 
 function Home() {
     return (
@@ -38,6 +39,9 @@ function Home() {
             </section>
             <section id='carro'>
                 <CarroHome />
+            </section>
+            <section id='store'>
+                <SustenStore />
             </section>
             <section id="bpm">
                 <SessaoBPM />

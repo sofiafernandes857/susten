@@ -30,6 +30,7 @@ const Footer = () => {
                     <a href='#sustenrace'>Sustenrace</a>
                     <a href='#produtos'>Produtos</a>
                     <a href='#carro'>Carro 3D</a>
+                    <a href='#store'>SustenStore</a>
                     <a href='#bpm'>Batimentos Cardíacos</a>
                     <a href='#forum'>Fórum</a>
                 </article>
